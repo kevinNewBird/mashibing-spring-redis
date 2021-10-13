@@ -8,7 +8,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class SpringRedisApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
         ConfigurableApplicationContext ctx = SpringApplication.run(SpringRedisApplication.class, args);
         TestRedis redis = ctx.getBean(TestRedis.class);
         redis.testRedis();

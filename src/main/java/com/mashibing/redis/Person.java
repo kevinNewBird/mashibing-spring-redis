@@ -1,5 +1,7 @@
 package com.mashibing.redis;
 
+import java.time.Period;
+
 /**
  * description  Person <BR>
  * <p>
@@ -8,7 +10,7 @@ package com.mashibing.redis;
  * company: TRS信息技术有限公司
  * version 1.0
  */
-public class Person {
+public class Person implements Cloneable{
 
     private String name;
 
@@ -36,5 +38,10 @@ public class Person {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
