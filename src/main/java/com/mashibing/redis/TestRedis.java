@@ -2,6 +2,8 @@ package com.mashibing.redis;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.Message;
+import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -75,7 +77,22 @@ public class TestRedis {
         Person sean03 = objectMapper.convertValue(stringRedisTemplate.opsForHash().entries("sean03"), Person.class);
         System.out.println(sean03.getName() + "--" + sean03.getAge());
 
+        // 发布订阅消息
 
+        // 接收消息
 
+        conn.subscribe(new MessageListener() {
+            @Override
+            public void onMessage(Message message, byte[] pattern) {
+                byte[] body = message.getBody();
+                System.out.println(new String(body));
+//                System.out.println(new String(pattern));
+            }
+        }, "sean-channel".getBytes());
+
+        while (true) {
+            // 发布消息
+            stringRedisTemplate.convertAndSend("sean-channel", "hello");
+        }
     }
 }
