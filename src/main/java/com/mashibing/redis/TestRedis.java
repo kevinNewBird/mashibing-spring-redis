@@ -69,7 +69,7 @@ public class TestRedis {
 
         //设置自定义的序列化器
         Person p3 = new Person();
-        p3.setName("wangwu");
+        p3.setName("wangwus");
         p3.setAge(20);
         //没有指定会导致反序列化时报错(认为制定了StringRedisTemplate--MyTemplate)
 //        stringRedisTemplate.setHashValueSerializer(new Jackson2JsonRedisSerializer<Object>(Object.class));
