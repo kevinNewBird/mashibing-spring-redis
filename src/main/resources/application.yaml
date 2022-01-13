@@ -1,0 +1,25 @@
+#配置国际化的资源路径
+spring:
+  messages:
+    basename: i18n/login
+# 激活数据库配置文件
+  profiles:
+    active: dbs
+
+qiangguohao:
+  #  open_api_url: https://zgxt.xuexi.cn
+  open_api_url: https://www.baidu.com/
+  secret_key: 1li99uasfdasjdfa
+  secret_access: 9jwirwio,ss
+qiangguohao1:
+  #  open_api_url: https://zgxt.xuexi.cn
+  open_api_url: https://www.baidu.com/
+  secret_key: 1li99uasfdasjdfa111
+  secret_access: 9jwirwio,ss111
+
+sequence:
+  limitConfig:
+    sina:
+      uidsRuleUrls:
+        - common/internal
+        - c/sina/openapi

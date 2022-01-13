@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+
+    <label>[[#{login.username}]]</label>
+    <input type="text" name="username" th:placeholder="#{login.username}">
+    <label>[[#{login.password}]]</label>
+    <input type="password" name="password" th:placeholder="#{login.password}">
+    <br> <br>
+    <div>
+        <label>
+            <input type="checkbox" value="remember-me"/> [[#{login.remmber}]]
+        </label>
+    </div>
+    <br>
+    <button type="submit" th:text="#{login.sign}">[[#{login.sign}]]</button>
+    <br> <br>
+    <!--这种方式就不需要加视图名称-->
+    <a th:href="@{/tf/login(language='zh_CN')}">中文</a>
+    <a th:href="@{/tf/login(language='en_US')}">English</a>
+
+    <br/>
+    <br/>
+    <a th:href="@{/login.html(language='zh_CN')}">中文</a>
+    <a th:href="@{/login.html(language='en_US')}">English</a>
+</form>
+</body>
+</html>

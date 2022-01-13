@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<users>
+    <user id="001">
+        <name>mary</name>
+        <age>3</age>
+        <sex>female</sex>
+    </user>
+</users>
