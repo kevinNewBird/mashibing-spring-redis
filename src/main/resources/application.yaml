@@ -23,3 +23,7 @@ sequence:
       uidsRuleUrls:
         - common/internal
         - c/sina/openapi
+
+# mybatis映射目录指定
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
